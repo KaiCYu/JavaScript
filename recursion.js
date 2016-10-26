@@ -16,6 +16,3 @@ function isEven(number){
 console.log(isEven(3));
 console.log(isEven(50));
 console.log(isEven(75));
-
-
-

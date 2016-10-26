@@ -34,8 +34,35 @@ Array.prototype.myMap = function (func) {
 	});
 	return mappedArray;
 };
-
+/*
 let a = arr.myMap(function(el) {
 	return el * el;
 });
 console.log(a);
+*/
+
+//myInject
+Array.prototype.myInject = function (func) {
+	let accum = 0;
+
+	this.myEach( function(element) {
+		 accum += func(element);
+	});
+	return accum;
+};
+
+function square(num1) {
+	let result = num1 * num1;
+	return result;
+}
+
+console.log(arr.myInject(square));
+
+
+function sum(num) {
+	let result = 0;
+	result += num;
+	return result;
+}
+
+console.log(arr.myInject(sum));
