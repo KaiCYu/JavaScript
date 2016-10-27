@@ -1,4 +1,4 @@
-let arr = [1,5,7,3,2,9];
+let a = [1,5,7,3,2,9,5,5];
 
 function bubbleSort(arr) {
   let sorted = false;
@@ -7,7 +7,7 @@ function bubbleSort(arr) {
     sorted = true;
 
     for(let i = 0; i < arr.length - 1; i += 1) {
-      if (arr[i] < arr[i+1])
+      if (arr[i] <= arr[i+1])
         continue;
         else {
           [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
@@ -19,4 +19,4 @@ function bubbleSort(arr) {
 }
 
 
-console.log(bubbleSort(arr));
+console.log(bubbleSort(a));
