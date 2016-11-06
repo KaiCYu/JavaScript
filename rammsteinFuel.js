@@ -12,7 +12,6 @@ function feuerFrei(concentration, barrels) {
   else {
     return hours - 100;
   }
-
 }
 
 feuerFrei(5, 2);
