@@ -7,9 +7,7 @@ function absurdTimes(numTimes, fn, completionFn) {
       completionFn();
       return;
     }
-
     i += 1;
-
     fn(loopStep);
   }
 
