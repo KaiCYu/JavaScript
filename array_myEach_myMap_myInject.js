@@ -14,7 +14,7 @@ Array.prototype.myEach = function (callback) {
 //myMap using annoynmous function notation
 Array.prototype.myMap = function (func) {
 	let copiedArr = [];
-	this.myEach( function(el) {
+	this.myEach(function(el) {
 			copiedArr.push(func(el));
 	});
 	return copiedArr;
