@@ -14,7 +14,6 @@ class Circle {
   perimeter() {
     return Math.PI * this.radius * 2;
   }
-
 }
 
 let circle = new Circle(5);
