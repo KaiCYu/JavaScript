@@ -1,8 +1,6 @@
-function isPalindrome(str) {
-	function reverse(){
-		return str.split('').reverse().join('')
-	}
-	return str === reverse();
+function clock() {
+	let current = new Date();
+	console.log(current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds());
 }
 
-console.log(isPalindrome("kayak"));
+setInterval(clock, 1000);
