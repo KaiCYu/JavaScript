@@ -8,5 +8,6 @@ let mystr = 'string';
 
 console.log(is_type(arr));
 console.log(is_type(5));
+
 console.log(is_type(str));     //returns TRUE
 console.log(is_type(mystr));   //returns FALSE
