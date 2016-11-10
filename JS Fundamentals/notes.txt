@@ -1,0 +1,260 @@
+alert is the most basic debugging tool
+
+log can be expanded inside dev tools
+
+both alert and log belong to the global window object
+
+weakly/dynamically typed language
+  - does not need to specify what type of data is stored
+  - data type can change
+
+variables without var/let automatically become a GLOBAL variable ( VERY BAD)
+  -use camelcasing
+
+Objects inherit properties and methods from other Objects
+    -ex hasOwnProperty
+
+Variable Types:
+PRIMITIVES:
+  -number (primary DT)
+    pos/neg
+    octal, exponential, hexadecimal
+    +/- infinity
+    Nan (not a number). Nothing is equal to Nan ==> isNan() to check
+  -string (primary DT)
+    '' or ""
+
+  -boolean (primary DT)
+    falsey values:
+      false, 0, '', null, undefined, NaN
+    all else are truthy
+  -undefined (special data types)
+    sometimes undefined and null are equal
+  -null (special data types)
+
+COMPOSITES:
+  -array
+    -container for mutliple values
+    -fixed numerical indices (starting with 0)
+  -objects
+    -container for key/value pairs
+    -dot notation or bracket notation
+    -indices using keys
+    -"associative arrays"
+
+Operators
+  +,-,*,/,**,%,++,--
+
+  prefix mode ==> returned, then in/decremented
+  postfix mode ==> in/decremented, then returned
+
+Assignment Operators
+
+Compariosn Operators
+  equality
+    regular vs strict operator
+    ==      vs ===
+    b/c type coercion (value AND type has to be true)
+    recommended to use strict operators
+  greater than
+  less than
+
+  Uniary Operators
+    used for one operator
+    delete ==> to delete objects
+
+    typeof
+      -number ==> number
+      -string ==> string
+      -boolean ==> boolean
+      -arrays ==> object
+      -null ==> object      //NOT null, bc backwards compatability
+
+  Logical operators
+    used for multiple operators
+    AND
+      -does not need to be booleans
+
+      !!(true && 1)
+      -"short-circuits" ==> if first operand is true, returns first operator
+
+    OR
+      -returns true if any of the operators are true
+      -stops to return true if any are true
+
+    COMMA
+      -LOWEST precedence
+      ex console.log('compund', 1 + 1)
+      //compund
+      //2
+
+    BITWISE Operators     //not common
+
+Operator precedence
+  -paranthesis is highest priority
+  -when equal precedence, sometimes is evaluated from left to right
+
+
+Objects
+  -should ALWAYS make objects using literal
+  -if trying to update a property that does not exist, JS will add a new property
+
+
+  -property = value/ keys pairs
+
+  Object Literal syntax:
+  -recommended way
+    var object = {
+      property1: true,
+      property2: 'hello'
+    }
+
+  New object syntax:
+    -used to make CUSTOM objects
+    var object = new Object()
+
+  Property Accessor
+    -dot notation
+      can reassign values of the property
+    -ex: object.property1;
+
+    -square bracket notation
+      can also reassign values of property
+      useful to use variable as key to access value
+
+Functions
+  -invoking fx:
+    myFunction(args);
+  -always returns a value
+  -once fx returns, they stop
+  -can also store functions in a variables
+    "Hoisting"
+      -
+      -always declare variables at the top of a fx (best practice)
+      -since variable declarations are ran first in JS
+
+  -can also define them to invoke automatically
+    -by wrapping fx declaration around in (), and having extra () at the end
+    -or by using a Uninary operator in front of declaration
+      -"leading bang syntax"
+      -also okay to use any other uninary operator
+
+
+Scope
+  -defines the visability of variables in different places
+
+  Global scope
+    -window in the browser
+    -can be accessed and updated anywhere in the code (BAD)
+    -can inspect in browser by "window" in console
+    -variables declared here are GLOBAL (leaky)
+    -cannot look into local variables
+
+      The Window object
+        -has many built in methods
+        -window.location.href ==> to find url
+
+  Function Scope
+    -ONLY functions can create its own scope (locally)
+    -variables here are local variables
+    -can see any variables inside the local => parent => ... => global scope
+    -used to protect variables!
+
+Strict Mode
+'use strict';
+  -enforces rules in JS
+  -recommended to ALWAYS use Strict mode
+    -b/c it can catch silent errors (easier to debug)
+    -prevents global variables to be used
+
+This
+  -usually an object
+  -value depends on where it is accessed
+    -like using call, or apply (to control what this is pointing to)
+
+  -if in global scope, this points to the window object
+
+  -if inside a method, this points to the custom object
+
+  -can be used in Constructor fxs to create instances of an object
+
+  -can also be used as an event handler
+    ex: invoke a fx when triggered (on click or button)
+
+Reserved Words
+  -"unexpected tokens"
+  -ex: variables, names, function names, object keys, new
+
+  to get around this: quote it and use bracket notation to access
+    ex: 'class'
+
+Conditionals
+    If Statements
+      -usually compare single values (variables)
+    Else
+
+    -best to evaluate the more likely condition first
+
+    -else at the end is NOT needed, but recommended
+
+    -all TRUTHY statements will be evaluated
+      -all +/- numbers, infinity, non-empty strings, or objects will be true
+      - 0 is "falsey"
+
+    Ternary Operators
+
+Switch Statements
+    -"faster"
+    -more readable?
+
+    -will "fall through" if no break expression
+    -can use default (similar to else)
+
+Loops
+  FOR
+    -most common
+    -used for arrays
+    -can set 2 variables
+      1) for index
+      2) to store arr.length (faster when array is very long)
+    -for increments, best to use assignment operator (+= or -=)
+
+    -FASTEST loop in JS
+
+  FOR IN
+    -used for objects
+    -SLOWEST loop in JS
+
+  WHILE
+    -executes code as long as the condtion returns true
+    -be careful for infinite loops!
+    -can use BREAK to end execution early
+    -condition is checked BEFORE the body of the loop is executed
+
+  DO WHILE
+    -executs while condition is true
+    -condition is checked AFTER the body is executed ONCE
+      ==> means loop runs at LEAST once
+
+
+Timers
+  -can evaluate strings as if it were code (bad practice)
+  -hard to debug
+  -also NOT secure
+  so... pass in a function name or function expression
+
+  **JS is single-threaded... so the time argument passed to timers are the MINIMUM
+  time to execute** (remember event stack?)
+
+  Browsers have a minimum timeout/interval (usually 4ms), but can still pass in 0
+
+  How do we stop Timeout/Interval??
+  -use clearInterval(ID) or clearTimeout(ID) methods
+
+  TIMEOUT
+    -executes block once after the timeout
+    -setTimeout()
+
+  INTERVAL
+    -repeatedly executes block after the interval
+    -setInterval()
