@@ -393,7 +393,7 @@ Object Methods
   -we can make custom methods...
   -by default, will be enumerable
 
-  
+
   .constructor
     -property of object instances
     -can test for this using the hasOwnProperty method
@@ -415,3 +415,30 @@ Object Methods
   .valueOf
     -get the string literal of a string object created from NEW keyword
     -not very useful... but JS uses this to coerce type
+
+Functions
+
+  -.length refers to the number or arguments
+
+  CALL
+    -used to invoke a function, and specifies what the THIS object is
+    -call passes 1 to n arguments to the fx
+    -first argument sets the THIS object
+    -2nd argument is passed to the "first argument" of a regular fx
+
+
+  APPLY
+    -also uses invokes a function, and specifies what the THIS object is
+    but.... also accepts a single argument after the THIS argument ==> ARRAY of arguments
+    -slightly more flexible compared to CALL b/c we can pass in an unexpected number of arguments
+
+  BIND
+    -used to control the THIS object
+    -does NOT invoke the function itself...
+    -returns a fx with its THIS object set
+    -can create a new bound fx for the THIS object (the fee in our example)
+
+Dates and Times
+
+  -must use NEW keyword (from the constructor)
+  -
