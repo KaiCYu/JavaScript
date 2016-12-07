@@ -10,3 +10,5 @@ function reduce(array, combine, start) {
 console.log(reduce([3,4,5,6,7], function(a, b) {
   return a+b;
 },0));
+
+console.log(5);
