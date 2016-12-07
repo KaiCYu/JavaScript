@@ -441,4 +441,62 @@ Functions
 Dates and Times
 
   -must use NEW keyword (from the constructor)
-  -
+
+  GETTERS
+    -can get month, day, or year of the local time
+    -can also get UTC time
+    -day of the week (sunday is 0 to 6)
+  SETTERS
+
+  CONVERTERS
+    -return transformed dates
+
+
+Math
+  -built in Math methods
+  -Constants like...
+    -Pi
+    -E (euler's function)
+
+  Rounding
+    -ceil() (round up)
+    -floor() (round down)
+    -round() (to nearest integer)
+
+  Largest/Smallest
+    -max()
+      ==> can take any # of arguments,
+      but will return NaN if there are any non-numeric arguments
+    -min()
+
+  Absolute Value
+    -abs()
+  Square Root
+    -sqrt()
+    - only for positive numbers, will return NaN for negatives
+  Raise to Power
+    -pow()
+  Random Number
+    -rand()
+      -between 0(inclusive) to 1(exclusive)
+  Trig Functions
+    -sin, cos, etc...
+
+Working with HTML
+  DOM = Document Object Model
+    -used to work with webpages
+    -have nodes (parents, children, siblings) like a family tree
+
+  Selecting Elements
+    all safe to use in all current browsers
+    -getElementByID
+      fastest way to select 1 element
+      returns the reference of the element/node
+      returns null if no reference by that ID
+    -getElementsByClassName
+      returns a node LIST (like an array) with a length property (# of elements in the list)
+      can use a regular for loop to access
+    -getElementsByTagName
+      also returns a node list, even though there is only 1 element
+    -getElementsByName
+      also returns a node list
