@@ -12,3 +12,5 @@ console.log(reduce([3,4,5,6,7], function(a, b) {
 },0));
 
 console.log(5);
+
+//testing
