@@ -15,5 +15,5 @@ function curriedSum(numArgs) {
   return _curriedSum;
 }
 
-var sum = curriedSum(3);
-console.log(sum(5)(3)(2));
+var sum = curriedSum(4);
+console.log(sum(5)(5)(3)(3));
