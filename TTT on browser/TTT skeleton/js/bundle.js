@@ -66,24 +66,26 @@
 	    this.setupBoard();
 	  }
 
-	  bindEvents() {}
+	  bindEvents() {
+
+	  }
 
 	  makeMove($square) {}
 
 	  setupBoard() {
-	    const $ul = $("<ul>");
-	    $ul.addClass("group");
+	    const $board = $("<ul>");
+	    $board.addClass("group");
 
 	    for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
 	      for (let colIdx = 0; colIdx < 3; colIdx++) {
-	        let $li = $("<li>");
-	        $li.data("pos", [rowIdx, colIdx]);
-
-	        $ul.append($li);
+	        let $cell = $("<li>");
+	        // $li.data("pos", [rowIdx, colIdx]);
+	        $.data($cell, 'pos', [rowIdx, colIdx]);
+	        $board.append($cell);
 	      }
 	    }
 
-	    this.$el.append($ul);
+	    this.$el.append($board);
 	  }
 	}
 	module.exports = View;
