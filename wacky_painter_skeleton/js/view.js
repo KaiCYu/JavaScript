@@ -49,6 +49,14 @@ View.prototype.exercise4 = function () {
   //Result: Your name appears in every other square.
 
   //your code here!
+  // $('.square').each(function(i, el) {
+  //   if (i % 2 === 0) {
+  //     $(el).text('Kai');
+  //   }
+  // });
+
+  $('.square:nth-child(even)').text('Kai');
+
 };
 
 View.prototype.exercise5 = function () {
