@@ -154,8 +154,6 @@
 	    const randomColor = window._randomColorString();
 	    $(square).css('background-color', randomColor);
 	  });
-	
-	
 	};
 	
 	View.prototype.exercise7 = function(){
@@ -166,6 +164,11 @@
 	  //rainbow.
 	
 	  //your code here!
+	  $('.square').on('mouseenter', function(event) {
+	    const $square = $(event.currentTarget);
+	    console.log($square.css('background-color'));
+	  });
+	
 	};
 	
 	
