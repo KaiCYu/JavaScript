@@ -15,7 +15,7 @@ View.prototype.exercise0 = function () {
   //just a list of dots
 
   //this one completed as an example :) no additional code necessary
-  $('li').removeClass("square");
+  $('li').removeClass('square');
 };
 
 View.prototype.exercise1 = function () {
@@ -68,6 +68,11 @@ View.prototype.exercise5 = function () {
   //  'data-pos' of every square
 
   //your code here!
+  $('.square').on('click', function(e) {
+    const $square = $(e.currentTarget);
+    alert($square.attr('data-pos'));
+  });
+
 };
 
 View.prototype.exercise6 = function () {
