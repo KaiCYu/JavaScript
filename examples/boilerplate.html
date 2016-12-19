@@ -1,0 +1,24 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+<ul>
+  <li>Racecars</li>
+  <li>Lasers</li>
+  <li>Aeroplanes</li>
+</ul>
+
+<script>
+  // Two ways of doing the same thing:
+
+  console.log("DOM WAY");
+  const listItems = document.querySelectorAll("li");
+  for (let i = 0; i < listItems.length; i++) {
+    console.log(listItems[i].textContent);
+  }
+
+  console.log("JQUERY WAY");
+  // returns a jQuery object; the leading dollar-sign in front of
+  // $listItems is conventional; it is just part of the variable name.
+  const $listItems = $("li");
+  for (let i = 0; i < $listItems.length; i++) {
+    console.log($listItems[i].textContent);
+  }

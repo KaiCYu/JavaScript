@@ -494,9 +494,84 @@ Working with HTML
       returns the reference of the element/node
       returns null if no reference by that ID
     -getElementsByClassName
-      returns a node LIST (like an array) with a length property (# of elements in the list)
+      returns a node LIST (like an array) with a length property
+      (# of elements in the list)
       can use a regular for loop to access
     -getElementsByTagName
       also returns a node list, even though there is only 1 element
     -getElementsByName
       also returns a node list
+
+    -when updating an element, it is "live" (updates on the page too)
+
+    Methods for manipulating DOM:
+
+    .id
+      change the ID tag for an element
+
+    .className
+
+    .classList
+      -only in newer browsers
+
+    .add()
+
+    .remove()
+
+    .contains()
+
+    .tagName()
+      -returns the tag type
+      -can return text nodes and comment nodes, not just HTML elements
+
+    .nodeName()
+
+    .nodeType()
+      -tells us what type of node
+      -HTML nodes have a type of 1
+      -text nodes have a type of 3 (the node contains the string)
+
+    .innerHTML
+      -to replace HTML elements
+
+    .outterHTML
+      -includes contents of the element, AND the element itself
+
+    .textContent
+      -safer than innerHTML and outterHTML
+
+    .setAttribute()
+      -to add/set attribute
+      ex: 'contenteditable', true
+
+    .removeAttribute()
+      -only have to specify the attribute to remove
+
+    .hasAttribute();
+      -returns true/false
+
+    DOM Traversal
+
+      we need to loop thru the child nodes to check if there are elements inside
+
+      Travel DOWN the DOM tree
+      .children
+        -gives a nodeList of the element, accessed like an array
+
+      .childNode
+        -works similar to .children
+
+      .firstChild  and  .lastChild
+        -works with ALL elements
+
+      Travel UP the DOM tree
+      .parent
+        -returns null of no parent is present (root element)
+        -returns a single element for the parent
+
+      .nextSibling
+
+      .previousSibling
+
+
+      
