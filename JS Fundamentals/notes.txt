@@ -593,3 +593,28 @@ Working with HTML
 
       .replaceChild()
         -.replaceChild(new element, what element to swap out)
+
+    DOM Events
+
+      -interactive events in webpage
+      -event Object
+      -useful for scroll, keyboard events too
+
+      .addEventListener()
+        -type of event to handle/listen for as first argument
+          ex: 'click', 'mouseover', etc...
+        -function to invoke as 2nd argument
+          does NOT have to be function literal
+        -bubbling/capture as 3rd argument
+          useful to add into parent elements when you want to listen to both
+          the headings inside the header
+
+      -can STOP the bubbling to the parent
+      .stopPropagation()
+        -to stop an event
+
+      .preventDefault()
+        ex: to stop nagivation
+
+      .removeEventListener()
+        -should use function references instead of function literals
