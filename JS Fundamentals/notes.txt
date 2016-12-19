@@ -557,9 +557,11 @@ Working with HTML
       Travel DOWN the DOM tree
       .children
         -gives a nodeList of the element, accessed like an array
+        -to get only element nodes
 
       .childNode
         -works similar to .children
+        -to get ALL node types
 
       .firstChild  and  .lastChild
         -works with ALL elements
@@ -573,5 +575,21 @@ Working with HTML
 
       .previousSibling
 
+    Adding/Removing Elements
 
-      
+      .appendChild()
+        -easiest way
+        -inserts a new element at the end of the parent element
+        -becomes the lastChild of the parent element
+        -can be used in all nodes
+
+      To add to as the FIRST element
+      .insertBefore()
+        -(what node to insert, what node to insert BEFORE(reference node))
+
+      .removeChild()
+        -has to be called on the PARENT element that contains the element we want to removeChild
+        -will throw an error if no child is found
+
+      .replaceChild()
+        -.replaceChild(new element, what element to swap out)

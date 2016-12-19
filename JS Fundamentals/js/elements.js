@@ -64,4 +64,24 @@
   console.log(heading.firstChild.nextSibling.nodeName);   //P
   console.log(heading.lastChild.previousSibling.nodeName);    //H2
 
+  document.body.appendChild(subHeading);
+
+  document.body.insertBefore(subHeading, heading);
+
+  document.body.removeChild(heading);
+    if (document.body.contains(heading)) {  //.contains returns false
+      document.body.removeChild(heading);   //no error!
+    }
+
+var substitute = document.createElement('i');
+substitute.textContent = 'I have been swapped in';
+document.body.replaceChild(substitute, subHeading);
+
+
+
+
+
+
+
+
 }());
