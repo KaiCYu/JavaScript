@@ -4,8 +4,8 @@
     <title>Halal Guys White and Red Sauce Recipe</title>
     <meta name="description" content="Easy way to make world famous Halal Guys White and Red Sauce" charset="utf-8">
     <!-- link to css file -->
-    <link rel="stylesheet" href="/recipe_style.css" type="text/css">
-    <script type="text/javascript" src="/recipe.js"></script>
+    <link rel="stylesheet" href="./recipe_style.css" type="text/css">
+    <script type="text/javascript" src="./recipe.js"></script>
     <!-- for google anaytics, does nothing here -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,7 +35,7 @@
   <h2>Ingredients</h2>
   <a name="Ingredients"></a>
 
-  <ul>
+  <ul class="ingredients-list">
     <li>1 cup mayonnaise (try to find one made of only egg yolks, not whole eggs)</li>
     <li>¼ cup water</li>
     <li>2 tablespoons fresh lemon juice</li>
@@ -75,7 +75,7 @@
   <!--Authored by Perry Santanachote-->
 </section>
 
-<section id="reviews">
+<section class="reviews" id="reviews">
   <h2>Reviews</h2>
   <form action="/reviews" method="post" id="review-form">
     <!-- for a text box -->
@@ -90,6 +90,7 @@
       4<input type="radio" name="rating" value="4">
       5<input type="radio" name="rating" value="5">
 
+    <br>
       <!-- for drop down menu -->
     <label for="expertise">Cooking Expertise</label>
       <select id="expertise" name="expertise">
@@ -103,7 +104,7 @@
     <br>
     <!-- for another text box, with dimensions -->
     <label>Review
-      <textarea name="review" cols="30" rows="10"></textarea>
+      <br><textarea name="review" cols="30" rows="10"></textarea><br>
     </label>
 
     <input type="submit" value="Submit Review">
