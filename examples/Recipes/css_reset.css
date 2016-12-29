@@ -17,7 +17,6 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  line-height: 1.5;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -26,8 +25,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1.5;
-  font-family: Arial, sans-serif;
-
 }
 ol, ul {
   list-style: none;
@@ -43,29 +40,4 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-h1 {
-  font-size: 38px;
-}
-h2 {
-  font-size: 32px;
-  font-weight: bold;
-}
-.ingredients-list {
-  list-style: square inside;
-  color: #d45f06;
-}
-header > img {
-  width: 100px;
-}
-ul > li > a {
-  text-decoration: none;
-  color: inherit;
-}
-html {
-  background-color: rgba(43, 134, 226, 0.79);
-}
-.reviews {
-  border: 5px solid #d45f06;
-  background-color: rgba(22, 22, 218, 0.12);
 }
