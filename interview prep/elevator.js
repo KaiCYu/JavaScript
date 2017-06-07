@@ -14,10 +14,11 @@ function solution(weight, destination, maxFloors, maxCap, maxWeight) {
     };
 
     while (destination.length > 0) {
+      
       //add people to elevator
       for (var i = 0; i < destination.length; i++) {
         if (weight[i] + elevator.currentWeight < elevator.maxWeight && elevator.currentCap < elevator.maxCap) {
-          elevator.currentWeight += weight[i];
+          elevator.currentWeight += weight[i];``
           elevator.currentCap += 1;
 
           elevator.toFloor.add(destination[i]);
