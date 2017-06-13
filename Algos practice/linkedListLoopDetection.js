@@ -39,6 +39,7 @@ const loopDetection2 = (list) => {
     return null;
   }
 
+  //b/c the loop will be off by k nodes
   slow = list;
   while (slow !== fast) {
     slow = slow.next;
