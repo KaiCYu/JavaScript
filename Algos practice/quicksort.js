@@ -6,9 +6,12 @@ const quicksort = (arr) => {
   let right = [];
   let pivot = arr[0];
 
+  //base case
   if (arr.length === 0) {
     return arr;
   }
+
+  //iterate thru array, compare value to pivot, push to either left or right array
   for (var i = 1; i < arr.length; i++) {
     if (arr[i] < pivot) {
       left.push(arr[i]);
@@ -16,6 +19,7 @@ const quicksort = (arr) => {
       right.push(arr[i]);
     }
   }
+  //recurse thru left and right, then combine left, pivot, and right into 1 array
   return quicksort(left).concat(pivot, quicksort(right));
 }
 
