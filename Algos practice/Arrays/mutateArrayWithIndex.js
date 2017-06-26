@@ -31,11 +31,11 @@ const mutate = (array, index) => {
 }
 
 const swap = (array, index1, index2) => {
-  let tempVal = array[index2];
-  array[index2] = array[index1];
-  array[index1] = tempVal;
-}
+  // let tempVal = array[index2];
+  // array[index2] = array[index1];
+  // array[index1] = tempVal;
 
-// console.log(swap([1,2,3,4], 0, 1))
+  [array[index1], array[index2]] = [array[index2], array[index1]];
+}
 
 console.log(mutate(['a', 'b','c','d','e'], [2,0,1,4,3])); //[b,c,a,e,d]
