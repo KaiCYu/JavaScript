@@ -29,7 +29,6 @@ const iterativeFlatten = (array) => {
 
 
 const reduceFlatten = (array) => {
-
   return array.reduce( (accum, iterator) => {
     return accum.concat( Array.isArray(iterator) ? reduceFlatten(iterator) : iterator);
   }, []);
