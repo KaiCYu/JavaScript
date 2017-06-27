@@ -11,7 +11,7 @@ class Stack {
     let min = this.min();
     this.stack.push({
       value: value,
-      min: Math.min(min !== undefined ? min : Number.POSITIVE_INFINITY, value)
+      min: Math.min(min !== undefined ? min : Number.POSITIVE_INFINITY, value),
     });
   }
 

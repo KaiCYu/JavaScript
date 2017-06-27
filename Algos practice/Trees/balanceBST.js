@@ -24,6 +24,7 @@ const BSTtoSortedArray = (tree) => {
   return result;
 }
 
+//build balanced BST from sorted array
 const sortedArrayToBalancedBST = (arr) => {
   if (arr.length === 0) {
     return;
@@ -44,6 +45,11 @@ const helper = function(nums, low, high) {
   return node;
 }
 
+const balanceBST = (tree) => {
+  let sortedArray = BSTtoSortedArray(newTree);
+  let balancedBST = sortedArrayToBalancedBST(sortedArray);
+  return balancedBST;
+}
 
 //***************** SCOPING ISSUE ***************** */
 // const helper = (arr) => {
@@ -75,9 +81,4 @@ newTree.left.right = new Tree(23)
 newTree.right.right = new Tree(9)
 newTree.right.right = new Tree(23)
 
-// console.log(BSTtoSortedArray(newTree));
-let sortedArray = BSTtoSortedArray(newTree);
-// console.log(sortedArray)
-
-console.log(sortedArrayToBalancedBST(sortedArray));
-let balancedBST = sortedArrayToBalancedBST(sortedArray);
+console.log(balanceBST(newTree));

@@ -4,39 +4,6 @@ const Tree = function(value) {
   this.right = null
 }
 
-// const BFSTreeTraversal = (node, cb) => {
-//   // var left = node.left;
-//   // var right = node.right;
-//   let queue = [];
-
-//   queue.push(node);
-
-//   while (queue.length) {
-//     let temp = queue.shift();
-//     cb(temp);
-
-//     if (temp.left) {
-//       queue.push(temp.left)
-//     }
-//     if (temp.right) {
-//       queue.push(temp.right);
-//     }
-//   }
-//   return;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 const BFS = (node, cb) => {
   let queue = [];
 
@@ -53,25 +20,7 @@ const BFS = (node, cb) => {
       queue.push(temp.right);
     }
   }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let newTree = new Tree(1);
 newTree.left = new Tree(6)
