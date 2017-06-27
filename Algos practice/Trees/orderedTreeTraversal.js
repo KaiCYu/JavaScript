@@ -48,6 +48,36 @@ const postOrderTraversal = function (node, cb) {
   cb(node);
 }
 
+const iterativeInOrderTraversal = (root) => {
+  let stack = [];
+  let result = [];
+
+  let current = root;
+  stack.push(root);
+  current = root.left;
+  
+  while (current !== null) {
+    stack.push(current);
+    current = current.left;
+  }
+
+  while (stack.length > 0) {
+    let temp = stack.pop()
+    result.push(temp.val);
+
+    if (temp.right !== null) {
+      current = temp.right;
+      while (current !== null) {
+        stack.push(current);
+        current = current.left;
+      }
+    }
+  }
+  return result;
+}
+
+console.log(iterativeInOrderTraversal(newTree));
+
 // preOrderTraversal(newTree, function(node) {
 //   console.log(node.val)} 
 // )
@@ -56,6 +86,6 @@ const postOrderTraversal = function (node, cb) {
 //   console.log(node.val);
 // })
 
-postOrderTraversal(newTree, function(node) {
-  console.log(node.val);
-})
+// postOrderTraversal(newTree, function(node) {
+//   console.log(node.val);
+// })
