@@ -21,3 +21,23 @@ const connectedBFS = (graph, start, target) => {
 }
 
 
+
+const connectedDFS = (graph, start, target) => {
+  return DFS(graph, new Set(), start, target);
+}
+
+const DFS = (graph, visited, start, target) => {
+  if (start === target) {
+    return true;
+  }
+
+  visited.add(start)
+  for(let neighbor of graph[start]) {
+    if (!visited.has(neighbor)) {
+      if (DFS(graph, visited, neighbor, target)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
