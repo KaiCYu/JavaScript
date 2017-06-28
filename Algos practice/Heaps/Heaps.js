@@ -33,25 +33,26 @@ class BinaryHeap {
   sinkDown(pos) {
     var left = 2 * pos + 1;
     var right = left + 1;
-    var largest = pos;
-    
-    if (left < this.content.length && this.content[left] < this.content[largest]) {
-      largest = left;
+    var swapIndex = pos;
+
+    if (left < this.content.length && this.content[left] < this.content[swapIndex]) {
+      swapIndex = left;
     }
-    if (right < this.content.length && this.content[right] < this.content[largest]) {
-      largest = right;
+    if (right < this.content.length && this.content[right] < this.content[swapIndex]) {
+      swapIndex = right;
     }
-    if (largest != pos) {
-      this.swap(largest, pos);
-      this.sinkDown(largest);
+
+    if (swapIndex !== pos) {
+      this.swap(swapIndex, pos);
+      this.sinkDown(swapIndex);
     }
   }
 
   swap(a, b) {
-    // [a, b] = [b, a]
-    let temp = this.content[a];
-    this.content[a] = this.content[b];
-    this.content[b] = temp;
+    [this.content[a], this.content[b]] = [this.content[b], this.content[a]];
+    // let temp = this.content[a];
+    // this.content[a] = this.content[b];
+    // this.content[b] = temp;
   }
 }
 
@@ -65,5 +66,5 @@ bh.push(10)
 bh.pop();
 bh.push(5)
 bh.pop();
-// bh.push(2)
+bh.push(2)
 console.log(bh.content)
