@@ -4,30 +4,54 @@ class BinaryHeap {
   }
 
   pop() {
-    let temp = this.content[0];
-    let end = this.content[this.content.length - 1];
-    
-    this.content[0] = end;
-    this.sinkDown(this.content);
+    let result = this.content[0];
+    let end = this.content.pop();
 
-    return temp;
+    if (this.content.length > 0) {
+      this.content[0] = end;
+      this.sinkDown(0);
+    }
+    return result;
   }
 
   push(value) {
     this.content.push(value);
-    this.bubbleUp(this.content);
+    this.bubbleUp(this.content.length - 1);
   }
 
   bubbleUp(pos) {
+    if (pos <= 0) {
+      return;
+    }
     let parentIndex = Math.floor((pos - 1) / 2);
+    if (this.content[parentIndex] > this.content[pos] ) {
+      this.swap(parentIndex, pos)
+      this.bubbleUp(parentIndex);
+    }
   }
 
   sinkDown(pos) {
-
+    var left = 2 * pos + 1;
+    var right = left + 1;
+    var largest = pos;
+    
+    if (left < this.content.length && this.content[left] < this.content[largest]) {
+      largest = left;
+    }
+    if (right < this.content.length && this.content[right] < this.content[largest]) {
+      largest = right;
+    }
+    if (largest != pos) {
+      this.swap(largest, pos);
+      this.sinkDown(largest);
+    }
   }
 
   swap(a, b) {
-    [a, b] = [b, a]
+    // [a, b] = [b, a]
+    let temp = this.content[a];
+    this.content[a] = this.content[b];
+    this.content[b] = temp;
   }
 }
 
@@ -35,4 +59,11 @@ let bh = new BinaryHeap();
 bh.push(1)
 bh.push(2)
 bh.push(3)
+bh.push(4)
+// bh.push(4)
+bh.push(10)
 bh.pop();
+bh.push(5)
+bh.pop();
+// bh.push(2)
+console.log(bh.content)

@@ -54,20 +54,20 @@ const iterativeInOrderTraversal = (root) => {
 
   let current = root;
   stack.push(root);
-  current = root.left;
-  
+  current = current.left;
+
   while (current !== null) {
     stack.push(current);
     current = current.left;
   }
 
-  while (stack.length > 0) {
-    let temp = stack.pop()
+  while (stack.length) {
+    let temp = stack.pop();
     result.push(temp.val);
 
-    if (temp.right !== null) {
-      current = temp.right;
-      while (current !== null) {
+    if (temp.right) {
+      current = temp.right
+      while (current) {
         stack.push(current);
         current = current.left;
       }
