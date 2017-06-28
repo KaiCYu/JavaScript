@@ -30,10 +30,9 @@ const DFS = (graph, visited, start, target) => {
   if (start === target) {
     return true;
   }
-
-  visited.add(start)
+  visited.add(start);
   for(let neighbor of graph[start]) {
-    if (!visited.has(neighbor)) {
+    if (!visited.has(start)) {
       if (DFS(graph, visited, neighbor, target)) {
         return true;
       }
