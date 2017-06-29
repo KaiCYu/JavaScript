@@ -46,7 +46,7 @@ const helper = function(nums, low, high) {
 }
 
 const balanceBST = (tree) => {
-  let sortedArray = BSTtoSortedArray(newTree);
+  let sortedArray = BSTtoSortedArray(tree);
   let balancedBST = sortedArrayToBalancedBST(sortedArray);
   return balancedBST;
 }
