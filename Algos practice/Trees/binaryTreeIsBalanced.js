@@ -1,8 +1,4 @@
-const Tree = function(value) {
-  this.value = value;
-  this.left = null
-  this.right = null
-}
+const Tree = require('./Tree.js');
 
 const isBalanced = (tree) => {
   let cache = {
