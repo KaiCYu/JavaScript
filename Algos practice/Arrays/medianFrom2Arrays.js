@@ -4,7 +4,8 @@
 function medianOf2SortedArrays (arr1, arr2) {
   let result = [];
   
-    while (arr1.length && arr2.length) {
+  //zip up the 2 arrays
+  while (arr1.length && arr2.length) {
     if (arr1[0] < arr2[0]) {
       result.push(arr1.shift());
     } else {
