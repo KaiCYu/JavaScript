@@ -618,3 +618,12 @@ Working with HTML
 
       .removeEventListener()
         -should use function references instead of function literals
+
+        to get the clicked username, have 2 options:
+        2) $(this)[0].text()
+        console.log($(this)[0].text);
+        1) use e.target
+        console.log(e.target);
+        var $follower = e.target;
+        var $follower = $(e.target).text();
+        pastTweets($follower);

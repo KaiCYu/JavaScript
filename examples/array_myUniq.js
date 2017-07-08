@@ -4,19 +4,13 @@ Array.prototype.myUniq = function () {
 	let uniq = [];
 
 	for(let i = 0; i < this.length; i+=1) {
-
 		if (uniq.includes(this[i])) {
 			continue;
-			// console.log((this.includes(uniq[i])	)=== (false ));	
-			// console.log(this);
-			// console.log(uniq);
-		}
-		else {
+		} else {
 			uniq.push(this[i]);
 		}
 	}
 	return uniq;
-
 }
 
 console.log(arr.my_uniq());
