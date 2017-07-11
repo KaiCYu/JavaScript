@@ -11,13 +11,11 @@ const intersection = (set1, set2) => {
 
   for (var j = 0; j < set2.length; j++) {
     if (temp[set2[j]]) {
-      result.push(set2[j]);
+      result.push(set2[j])
     }
   }
   
   return result;
 }
-
-
 
 console.log(intersection(dataSet1, dataSet2));
