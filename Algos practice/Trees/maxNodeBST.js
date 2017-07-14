@@ -19,6 +19,19 @@ const findLargestNode = (tree) => {
   return largest;
 }
 
+const findLargestNode2 = (tree) => {
+  let node = tree;
+  if (!node) {
+    return 0;
+  }
+
+  if (node.right) {
+    return findLargestNode2(node.right)
+  }
+  return node.value;
+}
+
+
 let newTree2 = new Tree(5);
 newTree2.left = new Tree(3)
 newTree2.right = new Tree(7)
@@ -28,3 +41,4 @@ newTree2.right.right = new Tree(8)
 newTree2.right.left = new Tree(6)
 
 console.log(findLargestNode(newTree2));
+console.log(findLargestNode2(newTree2));
