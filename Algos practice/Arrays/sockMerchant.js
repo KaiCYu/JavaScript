@@ -1,15 +1,12 @@
 //https://www.hackerrank.com/challenges/sock-merchant?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
 
+//using quicksort, O(nlogn) time
 function sockMerchant(n, ar) {
   // Complete this function
   let count = 0;
-  // let sorted = ar.sort((a, b) => {
-  //     return a > b;
-  // });
   let sorted = quicksort(ar);
-  
-  console.log(sorted);
-  for (let i = 0; i < sorted.length; i++) {
+
+    for (let i = 0; i < sorted.length; i++) {
     let pair = sorted[i];
     if(sorted[i] === sorted[i + 1]) {
       i++
@@ -38,4 +35,23 @@ const quicksort = (arr) => {
   return quicksort(left).concat(pivot, quicksort(right));
 }
 
+//in linear time without sorting
+const sockMerchant2 = (n, colors) => {
+  let count = 0;
+  let pairs = {};
+
+  for (var i = 0; i < colors.length; i++) {
+    if (!pairs[colors[i]]) {
+      pairs[colors[i]] = colors[i];
+    } else {
+      count++;
+      delete pairs[colors[i]];
+    }
+  }
+  return count;
+}
+
+
+
 console.log(sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
+console.log(sockMerchant2(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]));
