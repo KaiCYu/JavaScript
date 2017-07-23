@@ -12,6 +12,5 @@ const findPrimeFactors = (num) => {
   return result;
 }
 
-
-console.log(findPrimeFactors(15));  //5
+console.log(findPrimeFactors(15));  //5, 3
 console.log(findPrimeFactors(21));  //7, 3
