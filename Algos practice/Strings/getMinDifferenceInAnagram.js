@@ -13,7 +13,7 @@ function getMinimumDifference(a, b) {
 }
 
 function compare(str1, str2) {
-  let diff = 0;
+  // let diff = 0;
   let dict = {};
   let sumLetters = 0;
 
@@ -30,11 +30,10 @@ function compare(str1, str2) {
   }
 
   for (var j = 0; j < str2.length; j++) {
-    if (!dict[str2[j]]) {
-      diff++;
-    } else {
+    if (dict[str2[j]]) {
       dict[str2[j]]--;
-    }
+      // diff++;
+    } 
   }
 
   for(let letter in dict) {
