@@ -1,0 +1,9 @@
+.board {
+  background-color: grey;
+  margin: 10px;
+}
+
+td {
+  border-width: 2px;
+  border-color: black;
+}
