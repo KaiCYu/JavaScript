@@ -1,4 +1,4 @@
-//O(n logN ) time
+//O(n logN) time
 //O(N) space
 
 const quicksort = (arr) => {
@@ -23,5 +23,7 @@ const quicksort = (arr) => {
   return quicksort(left).concat(pivot, quicksort(right));
 }
 
+console.log(JSON.stringify(quicksort([10,1,4,2,6,8,1,3,7,5])) === JSON.stringify([1,1,2,3,4,5,6,7,8,10]) ); //1,1,2,3,4,5,6,7,8,10
+console.log(quicksort([10,1,4,2,6,8,1,3,7,5]))
 
-console.log(quicksort([10,1,4,2,6,8,1,3,7,5])); //1,1,2,3,4,5,6,7,10
+
