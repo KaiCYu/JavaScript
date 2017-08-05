@@ -16,7 +16,7 @@ Can you do it in O(n) time and/or in-place with O(1) extra space?
 
 const wiggleSort = (nums) => {
   //find median
-  //can use quicksort
+  //can use quickselect
   let sorted = nums.sort();
   let median = sorted[Math.floor(sorted.length / 2)];
 
