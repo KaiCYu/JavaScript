@@ -8,16 +8,17 @@ After iterating through the string, if the stack is empty, we know all brackets 
 Time Complexity: O(n)
 Space Complexity: O(1)
 */
+
 const bracketValidator = (string) => {
   const openBrackets = {
-    '[': '[',
-    '{': '{',
-    '(': '(',
+    '[':'[',
+    '{':'{',
+    '(':'(',
   }
 
   const closingBrackets = {
-    '}': '{',
     ']': '[',
+    '}': '{',
     ')': '(',
   }
 
@@ -28,19 +29,14 @@ const bracketValidator = (string) => {
       stack.push(string[i]);
     }
     if (closingBrackets[string[i]]) {
-      let toCheck = stack.pop();
-      if (toCheck !== closingBrackets[string[i]]) {
-        return false
+      let bracket = stack.pop();
+      if (bracket !== closingBrackets[string[i]]) {
+        return false;
       }
     }
   }
-  if (stack.length === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return stack.length === 0 ? true : false;
 }
-
 console.log(bracketValidator('(Hello World)') === true);
 console.log(bracketValidator('Hello World') === true); 
 console.log(bracketValidator('(Hello World)[') === false); 
