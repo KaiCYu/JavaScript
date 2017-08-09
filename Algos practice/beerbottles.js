@@ -1,13 +1,7 @@
-// // function countBeers(tests) {
-
-// // }
-
-
-// let testCases = [];
+//FOR THE INPUT
 // cases = input.split('\n');
 
 // cases = cases.slice(1);
-// console.log(cases)  //['10 2 5' , '12 4 4', '6 2 2']
 // cases.forEach(testCase => {
 //   let n, b, m;
 //   testCase = testCase.split(' ');
@@ -19,13 +13,14 @@
 // })
 
 function count(totalMoney, perBeer, bottlecapForBeer) {
-  totalMoney = Number(totalMoney);
+  totalMoney = totalMoney = Number(totalMoney);
   perBeer = Number(perBeer);
   bottlecapForBeer = Number(bottlecapForBeer);
-  console.log(totalMoney);
-  if (!(2 <= totalMoney && totalMoney <= 100000) || !(1 <= perBeer && perBeer <= bottlecapForBeer) || !(2 <= bottlecapForBeer && bottlecapForBeer <= totalMoney)) {
-    throw new Error('invalid input');
-  }
+
+  // if (!(2 <= totalMoney && totalMoney <= 100000) || !(1 <= perBeer && perBeer <= bottlecapForBeer) || !(2 <= bottlecapForBeer && bottlecapForBeer <= totalMoney)) {
+  //   // throw new Error('invalid input');
+  //   return 'invalid input';
+  // }
 
   let beers = 0;
   let caps = 0;
@@ -40,17 +35,10 @@ function count(totalMoney, perBeer, bottlecapForBeer) {
   return beers;
 }
 
-// console.log(count('a', 'b', 'c'));   //6
-// console.log(count('10', '2', '5'));   //6
-// console.log(count(12, 4, 4));   //3
-// console.log(count(6, 2, 2));   //5
-// console.log(count(6.5, 3, 2));   //5
-// console.log(count(7, 3.5 , 1));   //5
+console.log(count('10', '2', '5'));   //6
+console.log(count(12, 4, 4));   //3
+console.log(count(6, 2, 2));   //5
+console.log(count(7, 3.5 , 1));   //5
 console.log(count(7, 3.5 , 2));   //3
-// console.log(count(5, .5, 1));   //5
-// console.log(count(5, 2, 1));   //5
-
-// console.log(countBeers([10, 2, 5, 12, 4, 4, 6, 2, 2]))
-//6
-//3
-//5
+console.log(count(5, .5, 1));   //invalid
+console.log(count(5, 2, 1));   //invalid

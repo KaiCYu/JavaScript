@@ -1,14 +1,8 @@
 function isPangram(strings) {
   let result = '';
   strings.forEach((string) => {
-    // console.log(result)
-    // console.log(pangram(string))
-    // let temp = pangram(string);
-    // console.log(temp, 'result', result);
-    // result.concat(pangram(string));
     result = result.concat(pangram(string));
   })
-  // console.log(result);
   return result;
 }
 
@@ -18,7 +12,6 @@ function pangram(string) {
   };
 
   for (var i = 0; i < string.length; i++) {
-    // console.log('alphabet', alphabet, 'string', string[i]);
     if (string[i] !== ' ') {
       if (!alphabet[string[i]]) {
         alphabet[string[i]] = string[i];
@@ -26,8 +19,6 @@ function pangram(string) {
       } 
     }
   }
-  
-  // console.log(alphabet);
   return alphabet.count === 26 ? 1 : 0;
 }
 
