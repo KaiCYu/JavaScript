@@ -42,6 +42,13 @@ const isPalindrome = (queue) => {
   return true;
 }
 
+const recurTreePalindrome = (left, right) => {
+  if (left === null || right === null) {
+    return left === null && right === null;
+  }
+  return left.value === right.value && recurTreePalindrome(left.left, right.right) && recurTreePalindrome(left.right, right.left);
+}
+
 
 let newTree = new Tree(1);
 newTree.left = new Tree(2);
@@ -56,3 +63,5 @@ newTree.right.right = new Tree(3);
 // console.log(isPalindrome([3,4,1,3,2,4,3]));
 
 console.log(treePalindrome(newTree) === true);
+
+console.log(recurTreePalindrome(newTree.left, newTree.right) === true);
