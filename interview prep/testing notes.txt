@@ -1,0 +1,21 @@
+//key areas worth testing
+//what are the best wawys to test those areas
+//how would you implement those tests?
+
+key areas
+- API
+  - unit tests here for each route (create, store, upload, retrieve records)
+  - test to see if uploads actually go through transcode
+- transcode
+  - running on the correct schedule
+  - test for converted file types (proper stream optimized type)
+  - are actually sent and stored into the stored
+- store
+  - unit tests for the queries
+- serve
+  - test for performance
+  - test CDN 
+  - potentially adding load balancer?
+
+E2E testing for uploads
+unit tests using mocha or chai, 
