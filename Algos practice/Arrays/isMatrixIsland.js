@@ -34,4 +34,9 @@ const grid = [
   [0,0,1,0,0],
 ]
 
-console.log(numIslands(grid));
+const grid2 = [[1],
+               [1],
+              ]
+
+// console.log(numIslands(grid));
+console.log(numIslands(grid2));

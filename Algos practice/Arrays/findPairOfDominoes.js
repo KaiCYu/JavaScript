@@ -26,7 +26,6 @@
 
 const findPairsUsingHashTable = (dominoes, target) => { 
   let hash = {};
-  // let result = new Set();
   let result = [];
 
   for (var i = 0; i < dominoes.length; i++ ) {
@@ -34,19 +33,15 @@ const findPairsUsingHashTable = (dominoes, target) => {
     hash[t] = dominoes[i].toString();
   }
 
-  console.log(hash);
-  
   for(let domino in hash) {
     let value = [target - domino[0], target - domino[2]].toString();
-
-    console.log('domino, string', domino);
-    console.log('value', value);
-    
     if (hash[value]) {
       result.push(value);
     }
   }
+
   return result;
 }
 
-console.log(findPairsUsingHashTable([[2, 4], [4, 1], [4, 4], [3, 1], [1, 4]], 5));  //[[2, 4], [3, 1]]
+console.log(findPairsUsingHashTable([[2, 4], [4, 1], [4, 4], [3, 1], [1, 4]], 5));  //[[2, 4], [3, 1], [4,1], [1, 4]]
+console.log(findPairsUsingHashTable([[1,1], [4, 4], [3, 3]], 5));
