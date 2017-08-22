@@ -1,23 +1,5 @@
 const Tree = require('../Trees/Tree.js')
 
-// const ternaryToBST = (str, i) => {
-//   //base case
-//   if (i >= str.length) {
-//     return null;
-//   }
-//   console.log('i', i);
-//   let root = new Tree(str[i]);
-//   console.log(root);
-//   i++;
-
-//   if (i < str.length && str[i] === '?') {
-//     root.left = ternaryToBST(str, i + 1);
-//   } else if (i < str.length) {
-//     root.right = ternaryToBST(str, i + 1);
-//   }
-//   return root;
-// }
-
 const ternaryToBST = (str) => {
   if (str.length === 0) {
     return null;
@@ -42,7 +24,6 @@ const ternaryToBST = (str) => {
   }
   return root;
 }
-
 
 console.log(ternaryToBST('a?b:c', 0));
 console.log(ternaryToBST('a?b?c:d:e', 0));

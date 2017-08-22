@@ -27,5 +27,4 @@ const raffle = (students) => {
   return result;
 }
 
-
 console.log(raffle(students));
