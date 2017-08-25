@@ -1,0 +1,35 @@
+//the maximum differencce between elements in some array, a, is defined as the
+//largest difference between any a[i] and a[j] where i < j and a[i] < a[j]
+
+const findMaxDiff = (arr) => {
+  //O(n^2) approach
+  // let maxDiff = Number.NEGATIVE_INFINITY;
+  // for (var i = 0; i < arr.length; i++) {
+  //   for (var j = 0; j < arr.length; j++) {
+  //     if (i < j && arr[i] < arr[j] && maxDiff < arr[j] - arr[i]) {
+  //       maxDiff = arr[j] - arr[i];
+  //     }
+  //   }
+  // }
+  // return maxDiff;
+
+  //O(n) time
+  //O(1) space
+  let maxDiff = arr[1] - arr[0];
+  let minEl = arr[0];
+
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] - minEl > maxDiff) {
+      maxDiff = arr[i] - minEl;
+    }
+    if (arr[i] < minEl) {
+      minEl = arr[i];
+    }
+  }
+  return maxDiff;
+}
+
+console.log(findMaxDiff([4,1,2,3]) === 2);
+console.log(findMaxDiff([1, 5, 2, 3, 4, 7]) === 6);
+console.log(findMaxDiff([2,3,10,6,4,8,1]) === 8);
+console.log(findMaxDiff([7,9,5,6,3,2]) === 2);
