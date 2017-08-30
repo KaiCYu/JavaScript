@@ -1,6 +1,4 @@
 // Find the median of 2 sorted arrays in O(n + m) time 
-
-
 function medianOf2SortedArrays (arr1, arr2) {
   let result = [];
   
