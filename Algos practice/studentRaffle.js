@@ -1,4 +1,6 @@
-//There's a monthly raffle in a middle school. A winner is picked for each grade. How would you store and then select a random winner each month?  
+//There's a monthly raffle in a middle school. 
+//A winner is picked for each grade. 
+//How would you store and then select a random winner each month?  
 
 let students = {
   grade6: [
