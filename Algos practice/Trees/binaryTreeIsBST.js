@@ -3,15 +3,16 @@
 const Tree = require('./Tree.js');
 
 const binaryTreeIsBST = (tree) => {
-  return recurseTree(tree, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
+  return recurseTree(tree, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY);
 }
 
 const recurseTree = (node, min, max) => {
   if (node) {
-    if (node.value < min || node.value > max) {
+    if (node.value > min || node.value < max) {
       return false;
     }
-    return recurseTree(node.left, min, node.value) && recurseTree(node.right, node.value, max);
+    //recurse left and right, passing in min and max values
+    return recurseTree(node.left, node.value, max) && recurseTree(node.right, min, node.value);
   }
   return true;
 }
@@ -28,6 +29,8 @@ newTree2.left = new Tree(3)
 newTree2.right = new Tree(7)
 newTree2.left.left = new Tree(1)
 newTree2.left.right = new Tree(4)
+newTree2.left.left.right = new Tree(14)
+newTree2.left.right.left = new Tree(20)
 
 console.log(binaryTreeIsBST(newTree))   //false
 console.log(binaryTreeIsBST(newTree2))   //true

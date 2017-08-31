@@ -51,28 +51,6 @@ const balanceBST = (tree) => {
   return balancedBST;
 }
 
-//***************** SCOPING ISSUE ***************** */
-// const helper = (arr) => {
-//   let start = 0;
-//   let end = arr.length - 1;
-
-//   if (start > end) {
-//     return null;
-//   }
-
-//   let middle = Math.floor((start + end )/ 2);
-//   // let middle = (start + (end - start) / 2)
-
-//   let root = new Tree(arr[middle]);
-//   // console.log('root value ', arr[middle]);
-
-//   root.left = helper(arr.slice(start, middle - 1));
-//   root.right = helper(arr.slice(middle + 1, end));
-
-//   return root;
-// }
-
-
 let newTree = new Tree(50);
 newTree.left = new Tree(17)
 newTree.right = new Tree(76)
