@@ -66,5 +66,5 @@ bh.push(10)
 bh.pop();
 bh.push(5)
 bh.pop();
-bh.push(2)
+// bh.push(2)
 console.log(bh.content)

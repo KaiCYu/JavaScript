@@ -1,0 +1,13 @@
+typescript benefits:
+  -make JS "strongly" typed
+  -huge majority of angular is in TS (official and unofficial)
+  -stack types
+    types are checked at compile time, NOT run-time
+
+  -type checking
+    checks data types
+    similar to
+    strings, booleans, number, etc
+
+
+MAKE A SKELETON PROJECT

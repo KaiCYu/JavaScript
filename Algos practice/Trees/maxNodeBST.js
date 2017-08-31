@@ -6,7 +6,7 @@ const findLargestNode = (tree) => {
   let node = tree;
   largest = node.value;
 
-  if (!tree) {
+  if (!node) {
     largest = 0;
   }
 

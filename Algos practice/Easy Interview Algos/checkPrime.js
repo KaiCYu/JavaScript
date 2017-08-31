@@ -1,7 +1,7 @@
 const checkPrime = (num) => {
   var divisor = 2;
 
-  while (num > divisor) {
+  while (num/2 > divisor) {
     if (num % divisor === 0) {
       return false;
     } else {
