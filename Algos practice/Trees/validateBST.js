@@ -1,19 +1,16 @@
 //implement a function to check if a binary tree is a binary search tree
 const Tree = require('./Tree');
 
-function isValidBST(tree) {
-  if (!tree) {
-    throw new Error('invalid tree');
-  }
-  return isValidBSTRecursive(tree, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
+const isValidBST = (root) => {
+  return recurse(root, Number.NEGATIVE_INFINITY, Number.POSITIVE_INFINITY);
 }
 
-function isValidBSTRecursive(node, min, max) {
+const recurse = (node, min, max) => {
   if (node) {
     if (node.value < min || node.value > max) {
       return false;
     }
-    return isValidBSTRecursive(node.left, min, node.value) && isValidBSTRecursive(node.right, node.value, max);
+    return recurse(node.left, min, node.value) && recurse(node.right, node.value, max);
   }
   return true;
 }
@@ -32,6 +29,5 @@ BST.left.left = new Tree(2);
 BST.left.right = new Tree(6);
 BST.right.right = new Tree(20);
 
-// console.log(BST)
 console.log(isValidBST(binaryTree));
 console.log(isValidBST(BST));
