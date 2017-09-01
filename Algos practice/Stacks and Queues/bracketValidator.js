@@ -37,6 +37,7 @@ const bracketValidator = (string) => {
   }
   return stack.length === 0 ? true : false;
 }
+
 console.log(bracketValidator('(Hello World)') === true);
 console.log(bracketValidator('Hello World') === true); 
 console.log(bracketValidator('(Hello World)[') === false); 

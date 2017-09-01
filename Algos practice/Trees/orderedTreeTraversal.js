@@ -76,7 +76,7 @@ const iterativeInOrderTraversal = (root) => {
   return result;
 }
 
-console.log(iterativeInOrderTraversal(newTree));
+// console.log(iterativeInOrderTraversal(newTree));
 
 // preOrderTraversal(newTree, function(node) {
 //   console.log(node.val)} 

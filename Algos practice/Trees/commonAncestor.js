@@ -15,22 +15,23 @@ const commonAncestor = (root, target1, target2) => {
 
 const findPathToNode = (root, target, path) => {
   path = path || [];
+  let temp;
 
   if (root.value === target) {
     return path;
   }
 
   if (root.left) {
-    let temp = findPathToNode(root.left, target, path.concat(root.value))
+    temp = findPathToNode(root.left, target, path.concat(root.value));
     if (temp) {
       return temp;
     }
   }
 
   if (root.right) {
-    let tempAns = findPathToNode(root.right, target, path.concat(root.value))
-    if (tempAns) {
-      return tempAns;
+    temp = findPathToNode(root.right, target, path.concat(root.value));
+    if (temp) {
+      return temp;
     }
   }
 }
@@ -45,4 +46,4 @@ newTree.right.left = new Tree(24)
 newTree.left.left.left = new Tree(22)
 
 // console.log(findPathToNode(newTree, 22, []));
-console.log(commonAncestor(newTree, 24, 19))
+console.log(commonAncestor(newTree, 24, 19))  //76
