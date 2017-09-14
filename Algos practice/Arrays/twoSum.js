@@ -18,6 +18,7 @@ const twoSum = (arr, target) => {
     dict[target - arr[i]] = true;
   }
 
+  console.log('dict', dict);
   for (var i = 0; i < arr.length; i++) {
     if (dict[arr[i]]) {
       result.push(arr[i]);
