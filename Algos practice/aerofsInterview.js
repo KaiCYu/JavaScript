@@ -52,28 +52,29 @@ asyncMap(jobs, callback);
 
 const addNextToBST = (root) => {
   let queue = [root, null];
-
+  root.next = null;
+  
   while (queue.length) {
     let current = queue.shift();
-    // console.log('QUEUE', queue, 'CURRENT', current)
     if (current === null) {
-      if (queue[0] === null) {
-        break;
-      }
-      queue.forEach((node, i) => {
-        node.next = node[i + 1];
-      })
       queue.push(null);
+      for (var i = 0; i < queue.length - 1; i++) {
+        queue[i].next = queue[i + 1];
+      }
+      if (queue[0] === null) {
+        return;
+      }
     }
-    
-    if (current.left) {
-      queue.push(current.left)
-    }
-    if (current.right) {
-      queue.push(current.right)
+
+    if (current !== null) {
+      if (current.left) {
+        queue.push(current.left)
+      }
+      if (current.right) {
+        queue.push(current.right)
+      }
     }
   }
-
   return root;
 }
 
@@ -88,3 +89,4 @@ myTree.left.right.left = new Tree(8);
 myTree.right.right.left = new Tree(9);
 
 console.log(addNextToBST(myTree));
+console.log(myTree)
