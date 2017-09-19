@@ -1,25 +1,19 @@
 const Tree = require('./Tree.js');
 
-const pathToBSTNode = (root, target, path) => {
-  path = path || [];
-
-  if (!root) {
+const pathToBSTNode = (root, target, path = []) => {
+  if (root === null) {
     return false;
   }
+
   path.push(root.value);
 
-  if (root.value === target) {
-    return path;
-  }
-
-  if (pathToBSTNode(root.left, target, path) || pathToBSTNode(root.right, target, path)) {
+  if (root.value === target || pathToBSTNode(root.left, target, path) || pathToBSTNode(root.right, target, path)) {
     return path;
   }
 
   path.pop();
   return false;
 }
-
 
 let binaryTree = new Tree(1);
 binaryTree.left = new Tree(2);
