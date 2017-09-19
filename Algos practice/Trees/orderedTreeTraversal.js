@@ -82,9 +82,9 @@ const iterativeInOrderTraversal = (root) => {
 //   console.log(node.val)} 
 // )
 
-// inOrderTraversal(newTree, function(node) {
-//   console.log(node.val);
-// })
+inOrderTraversal(newTree, function(node) {
+  console.log(node.val);
+})
 
 // postOrderTraversal(newTree, function(node) {
 //   console.log(node.val);

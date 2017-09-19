@@ -36,6 +36,25 @@ const findPathToNode = (root, target, path) => {
   }
 }
 
+const commonAncestorRec = (root, target1, target2) => {
+  if (root === null) {
+    return null;
+  }
+
+  if (root === target1 || root === target2) {
+    return root;
+  }
+
+  let left = commonAncestorRec(root.left, target1, target2);
+  let right = commonAncestorRec(root.right, target1, target2);
+
+  console.log('left', left, 'right', right);
+
+  if (left && right) {
+    return root;
+  }
+}
+
 let newTree = new Tree(50);
 newTree.left = new Tree(17)
 newTree.right = new Tree(76)
@@ -45,5 +64,6 @@ newTree.right.right = new Tree(19)
 newTree.right.left = new Tree(24)
 newTree.left.left.left = new Tree(22)
 
-// console.log(findPathToNode(newTree, 22, []));
-console.log(commonAncestor(newTree, 24, 19))  //76
+console.log(findPathToNode(newTree, 22, []));
+// console.log(commonAncestor(newTree, 24, 19))  //76
+// console.log(commonAncestorRec(newTree, 24, 19));
